@@ -30,14 +30,46 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_svg: any
+
+  form_builder_validators: ^7.3.0
+
+  flutter_localizations: # Setting up an internation­alized app: the Flutter_localizations package
+    sdk: flutter
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
+  flutter_form_builder: ^7.0.0
+
+  #  Approximate how your Flutter app looks and performs on another device.
+  device_preview: ^1.0.0
+
+  #Easily configure any flutter application with global variables using a `.env` file.
+  flutter_dotenv: ^5.0.2
+
+  get_it: ^7.2.0
+
+  injectable: ^1.5.3 #Injectable is a convenient code generator for get_it. Inspired by Angular DI, Guice DI and inject.dart.
+
+  auto_route: ^3.2.2 #AutoRoute is a declarative routing solution, where everything needed for navigation is automatically generated for you.
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  # add build runner if not already added
+  build_runner:
+
+  # add the generator to your dev_dependencies
+  injectable_generator:
+  auto_route_generator: ^3.2.1
+  json_serializable: ^6.1.4
+  json_annotation:
+
+
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -45,6 +77,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+
+  auto_route: ^3.2.2 #AutoRoute is a declarative routing solution, where everything needed for navigation is automatically generated for you.
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -58,6 +92,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/.env
+    - assets/images/
+    - assets/images/dummy_images/
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
