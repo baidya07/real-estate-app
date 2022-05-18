@@ -20,7 +20,7 @@ class AppColors {
   }
 }
 
-const primaryColor = Color(0xff03539F);
+const primaryColor = Color(0xffe6cd6b);
 const primaryColorLight = Color(0xff5065F6);
 const secondaryColor = Color(0xffFED520);
 const scaffoldBgColor = Color(0xffffffff);
