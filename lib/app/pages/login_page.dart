@@ -3,14 +3,14 @@ import 'package:real_estate_app/app/pages/splash_screen/splash_screen.dart';
 
 import '../resources/size_constants.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class LogInPage extends StatefulWidget {
+  const LogInPage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<LogInPage> createState() => _LogInPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _LogInPageState extends State<LogInPage> {
   String? _username, _password;
 
   @override

@@ -2,7 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:real_estate_app/app/pages/profile_page/profile_page.dart';
-import 'package:real_estate_app/routes/router.gr.dart';
+
+import '../../../routes/router.gr.dart';
 
 
 class SplashPage extends StatefulWidget {
@@ -72,7 +73,7 @@ class _SplashPageState extends State<SplashPage> {
         ),
         done: ElevatedButton(
           onPressed: () {
-            context.router.navigate(const DashboardRoute());
+            context.router.navigate(const LandingRoute());
           },
           child: const Text(
             'Done',

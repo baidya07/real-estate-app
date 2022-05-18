@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-///Creates a rounded icon
+///Creates a rounded icons
 
 class RoundedIcon extends StatelessWidget {
   final bool hasShadow;

@@ -1,13 +1,15 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../resources/colors.dart';
-import '../resources/size_constants.dart';
-import '../resources/ui_assets.dart';
-import '../widgets/rounded_widget.dart';
+import '../../../routes/router.gr.dart';
+import '../../resources/colors.dart';
+import '../../resources/size_constants.dart';
+import '../../resources/ui_assets.dart';
+import '../../widgets/rounded_widget.dart';
 
-class DashboardPage extends StatelessWidget {
-  const DashboardPage({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +23,26 @@ class DashboardPage extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white,
-        leading: const Icon(
-          Icons.list,
+        leading: IconButton(
+          onPressed: (){},
+          icon: const Icon(Icons.list),
           color: Colors.black,
         ),
         actions: [
-          const Icon(
-            Icons.search,
+          IconButton(
+            onPressed: (){
+              context.router.navigate(const SearchRouter());
+            },
+            icon: const Icon(Icons.search),
             color: Colors.black,
           ),
+          //Icons.search,
           SBC.mW,
-          const Icon(
-            Icons.account_circle_rounded,
+           IconButton(
+            onPressed: (){
+              context.router.navigate(const ProfileRouter());
+            },
+            icon: const Icon(Icons.account_circle_rounded),
             color: Colors.black,
           ),
           SBC.mW,
@@ -67,36 +77,62 @@ class DashboardPage extends StatelessWidget {
               SBC.lH,
               const _HeadingBar(title: 'Recommendation', secondaryTitle: 'See all',),
               SBC.lH,
-              SizedBox(
-                height: 150,
-                child: Stack(
-                  children: [
-                    const _ChipImage(),
-                    Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Align(
-                              alignment: Alignment.bottomLeft,
-                              child: Text('Pool House', style: Theme.of(context).textTheme.bodyText1!.copyWith(color: primaryColor),)),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: const [
-                              Icon(Icons.location_on),
-                              Text('Malibu')
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
+              SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(
+                      3, (index) {
+                    return Row(
+                      children: [
+                        const _LowerBanner(),
+                        SBC.mW,
+                      ],
+                    );
+                  }),
                 ),
-              )
+              ),
+
 
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _LowerBanner extends StatelessWidget {
+  const _LowerBanner({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 150,
+      child: Stack(
+        children: [
+          const _ChipImage(),
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Text('Pool House', style: Theme.of(context).textTheme.bodyText1!.copyWith(color: primaryColor),)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: const [
+                    Icon(Icons.location_on),
+                    Text('Malibu')
+                  ],
+                )
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

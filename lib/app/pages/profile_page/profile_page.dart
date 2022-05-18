@@ -1,9 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:real_estate_app/app/resources/colors.dart';
-import 'package:real_estate_app/app/resources/size_constants.dart';
 
-final horizontalEdgePadding = 15.0;
-final verticalEdgePadding = 20.0;
+
+const horizontalEdgePadding = 15.0;
+const  verticalEdgePadding = 20.0;
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: IconButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () { context.router.pop();},
           icon: const Icon(Icons.arrow_back_ios_new_outlined,
               size: 14, color: Colors.black),
         ),
@@ -31,7 +32,7 @@ class ProfilePage extends StatelessWidget {
             Container(
               color: Colors.white,
               child: Padding(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                     horizontal: horizontalEdgePadding,
                     vertical: verticalEdgePadding),
                 child: Column(
