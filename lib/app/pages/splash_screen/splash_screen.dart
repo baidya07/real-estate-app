@@ -1,15 +1,18 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:real_estate_app/app/pages/profile_page/profile_page.dart';
+import 'package:real_estate_app/routes/router.gr.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+
+class SplashPage extends StatefulWidget {
+  const SplashPage({Key? key}) : super(key: key);
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<SplashPage> createState() => _SplashPageState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashPageState extends State<SplashPage> {
   static const pageDecoration = PageDecoration(
       titleTextStyle: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600, color: Colors.black),
       bodyTextStyle: TextStyle(fontSize: 14.0, color: Colors.black),
@@ -41,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
             title: 'Find the place of your dreams',
             body: 'create a emotional story that describes better than words',
             image: Image.asset(
-              'assets/house1_image.jpg',
+              'assets/images/dummy_images/house1_image.jpg',
               width: 350,
             ),
             decoration: pageDecoration,
@@ -50,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen> {
             title: 'Find the place of your dreams',
             body: 'create a emotional story that describes better than words',
             image: Image.asset(
-              'assets/house1_image.jpg',
+              'assets/images/dummy_images/house1_image.jpg',
               // height: 300,
               width: 350,
             ),
@@ -68,7 +71,9 @@ class _SplashScreenState extends State<SplashScreen> {
           color: Colors.black,
         ),
         done: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            context.router.navigate(const DashboardRoute());
+          },
           child: const Text(
             'Done',
           ),
