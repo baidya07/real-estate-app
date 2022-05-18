@@ -35,6 +35,7 @@ class HouseDetail extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: const _BottomNav(),
     );
   }
 }
@@ -49,7 +50,8 @@ class _HouseDescription extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding:
+              const EdgeInsets.symmetric(horizontal: SC.mW, vertical: SC.lH),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -82,39 +84,49 @@ class _HouseDescription extends StatelessWidget {
                 ],
               ),
               const _DescriptionSection(),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 8, 10, 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 50,
-                      width: 60,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: const Color.fromARGB(255, 166, 165, 165)),
-                          borderRadius: BorderRadius.circular(15)),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.favorite,
-                          // color: Colors.pink,
-                          size: 35.0,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 50,
-                      width: 200,
-                      child: PrimaryButton(onPressed: () {}, title: "BUY NOW"),
-                    ),
-                  ],
-                ),
-              )
             ],
           ),
         ),
       ],
+    );
+  }
+}
+
+class _BottomNav extends StatelessWidget {
+  const _BottomNav({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8, 8, 10, 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            height: 50,
+            width: 60,
+            decoration: BoxDecoration(
+                border:
+                    Border.all(color: const Color.fromARGB(255, 166, 165, 165)),
+                borderRadius: BorderRadius.circular(15)),
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.favorite,
+                // color: Colors.pink,
+                size: 35.0,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 50,
+            width: 200,
+            child: PrimaryButton(onPressed: () {}, title: "BUY NOW"),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -167,10 +179,10 @@ class _DescriptionSection extends StatelessWidget {
           SBC.lH,
           Text(
             "After selling  \$ 500 of new apartments during the pandemic, we spoke to the experts from Laver Residential Projects to find out how buyer preferences have changed.",
-            style: Theme.of(context)
-                .textTheme
-                .bodyText1!
-                .copyWith(color: const Color.fromARGB(255, 122, 122, 122)),
+            style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                  color: const Color.fromARGB(255, 122, 122, 122),
+                ),
+            textAlign: TextAlign.justify,
           ),
         ],
       ),
