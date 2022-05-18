@@ -43,13 +43,13 @@ ThemeData appTheme() {
         color: Color(0xff144FFF),
       ),
       caption: TextStyle(
-        fontSize: 13,
+        fontSize: 12,
       ));
 
   final inputDecorationTheme = InputDecorationTheme(
     fillColor: Colors.white,
     contentPadding:
-    const EdgeInsets.symmetric(vertical: 18.0, horizontal: 10.0),
+        const EdgeInsets.symmetric(vertical: 18.0, horizontal: 10.0),
     // fillColor: Color(0XFFF0F0F0),
     filled: true,
     errorBorder: OutlineInputBorder(
@@ -127,7 +127,7 @@ ThemeData appTheme() {
     appBarTheme: const AppBarTheme(
         color: primaryColor,
         actionsIconTheme:
-        IconThemeData(color: Colors.black, opacity: 0.7, size: 28)),
+            IconThemeData(color: Colors.black, opacity: 0.7, size: 28)),
   );
 }
 
