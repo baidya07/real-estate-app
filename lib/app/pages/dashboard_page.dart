@@ -1,6 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:real_estate_app/app/pages/profile_page/profile_page.dart';
+import 'package:real_estate_app/routes/router.gr.dart';
 import '../resources/colors.dart';
 import '../resources/size_constants.dart';
 import '../resources/ui_assets.dart';
@@ -31,41 +34,51 @@ class DashboardPage extends StatelessWidget {
             color: Colors.black,
           ),
           SBC.mW,
-          const Icon(
-            Icons.account_circle_rounded,
-            color: Colors.black,
-          ),
+          IconButton(
+              onPressed: () {
+                context.router.navigate(const ProfileRoute());
+              },
+              icon: Icon(
+                Icons.account_circle_rounded,
+                color: Colors.black,
+              )),
           SBC.mW,
         ],
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: SC.mW, vertical: SC.mH),
+          padding:
+              const EdgeInsets.symmetric(horizontal: SC.mW, vertical: SC.mH),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const _MainCategoryView(),
               SBC.mH,
-              const _HeadingBar(title: 'Popular', secondaryTitle: 'See all',),
+              const _HeadingBar(
+                title: 'Popular',
+                secondaryTitle: 'See all',
+              ),
               SBC.lH,
               SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  children: List.generate(
-                      5, (index) {
-                        return Row(
-                          children: [
-                            const _PopularChip(),
-                            SBC.mW,
-                          ],
-                        );
-                      }),
+                  children: List.generate(5, (index) {
+                    return Row(
+                      children: [
+                        const _PopularChip(),
+                        SBC.mW,
+                      ],
+                    );
+                  }),
                 ),
               ),
               SBC.lH,
-              const _HeadingBar(title: 'Recommendation', secondaryTitle: 'See all',),
+              const _HeadingBar(
+                title: 'Recommendation',
+                secondaryTitle: 'See all',
+              ),
               SBC.lH,
               SizedBox(
                 height: 150,
@@ -79,7 +92,13 @@ class DashboardPage extends StatelessWidget {
                         children: [
                           Align(
                               alignment: Alignment.bottomLeft,
-                              child: Text('Pool House', style: Theme.of(context).textTheme.bodyText1!.copyWith(color: primaryColor),)),
+                              child: Text(
+                                'Pool House',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1!
+                                    .copyWith(color: primaryColor),
+                              )),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: const [
@@ -93,7 +112,6 @@ class DashboardPage extends StatelessWidget {
                   ],
                 ),
               )
-
             ],
           ),
         ),
@@ -116,8 +134,16 @@ class _HeadingBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(title, style: Theme.of(context).textTheme.headline6,),
-        TextButton(onPressed: (){}, child: Text(secondaryTitle, style: Theme.of(context).textTheme.caption,)),
+        Text(
+          title,
+          style: Theme.of(context).textTheme.headline6,
+        ),
+        TextButton(
+            onPressed: () {},
+            child: Text(
+              secondaryTitle,
+              style: Theme.of(context).textTheme.caption,
+            )),
       ],
     );
   }
@@ -142,30 +168,44 @@ class _PopularChip extends StatelessWidget {
         // mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-         _ChipImage(),
+          _ChipImage(),
           SBC.lH,
-         Padding(
-           padding: const EdgeInsets.symmetric(horizontal: 15.0),
-           child: Column(
-             mainAxisSize: MainAxisSize.min,
-             crossAxisAlignment: CrossAxisAlignment.start,
-             children: [
-               Text('Twin Villa', style: Theme.of(context).textTheme.bodyText1,),
-               SBC.mH,
-               Row(
-                 mainAxisSize: MainAxisSize.min,
-                 mainAxisAlignment: MainAxisAlignment.start,
-                 children: [
-                   const Icon(Icons.location_on,),
-                    Text('Twin Villa', style: Theme.of(context).textTheme.bodyText2,),
-                 ],
-               ),
-               SBC.mH,
-               Text('\$120k', style: Theme.of(context).textTheme.bodyText2!.copyWith(color: primaryColor),),
-               SBC.lH,
-             ],
-           ),
-         ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Twin Villa',
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
+                SBC.mH,
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const Icon(
+                      Icons.location_on,
+                    ),
+                    Text(
+                      'Twin Villa',
+                      style: Theme.of(context).textTheme.bodyText2,
+                    ),
+                  ],
+                ),
+                SBC.mH,
+                Text(
+                  '\$120k',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2!
+                      .copyWith(color: primaryColor),
+                ),
+                SBC.lH,
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -181,18 +221,20 @@ class _ChipImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 150,
-        width: 350,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(18.0),
-           image:  const DecorationImage(
-             fit: BoxFit.cover,
-             image: NetworkImage('https://666159.smushcdn.com/1406590/wp-content/uploads/2019/08/1Villa-Solstice-Estepona-.jpg?size=1440x720&lossy=1&strip=1&webp=1',),
-           ),
-          border: Border.all(
-            color: Colors.grey.withOpacity(0.9),
-            width: 0.5,
+      width: 350,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(18.0),
+        image: const DecorationImage(
+          fit: BoxFit.cover,
+          image: NetworkImage(
+            'https://666159.smushcdn.com/1406590/wp-content/uploads/2019/08/1Villa-Solstice-Estepona-.jpg?size=1440x720&lossy=1&strip=1&webp=1',
           ),
         ),
+        border: Border.all(
+          color: Colors.grey.withOpacity(0.9),
+          width: 0.5,
+        ),
+      ),
     );
   }
 }
@@ -266,4 +308,3 @@ class _CategoryCard extends StatelessWidget {
     );
   }
 }
-

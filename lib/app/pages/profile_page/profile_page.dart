@@ -45,15 +45,20 @@ class ProfilePage extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             const CircleAvatar(
+                              backgroundColor: primaryColor,
                               child: Icon(Icons.person),
-                              maxRadius: 10,
-                              minRadius: 10,
+                              maxRadius: 25,
+                              minRadius: 25,
                             ),
                             const SizedBox(width: 10),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Kritika Subba'),
+                                Text(
+                                  'Kritika Subba',
+                                  style: Theme.of(context).textTheme.bodyText1,
+                                ),
+                                SBC.sH,
                                 Text('98XXXXXXXX'),
                               ],
                             ),

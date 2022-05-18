@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:real_estate_app/app/pages/profile_page/profile_page.dart';
+import 'package:real_estate_app/app/resources/colors.dart';
 import 'package:real_estate_app/routes/router.gr.dart';
-
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -14,7 +14,8 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   static const pageDecoration = PageDecoration(
-      titleTextStyle: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600, color: Colors.black),
+      titleTextStyle: TextStyle(
+          fontSize: 22.0, fontWeight: FontWeight.w600, color: Colors.black),
       bodyTextStyle: TextStyle(fontSize: 14.0, color: Colors.black),
       bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
       imagePadding: EdgeInsets.zero,
@@ -35,7 +36,7 @@ class _SplashPageState extends State<SplashPage> {
             title: 'Find the place of your dreams',
             body: 'create a emotional story that describes better than words',
             image: Image.asset(
-              'assets/house.jpg',
+              'assets/images/dummy_images/house.jpg',
               width: 350,
             ),
             decoration: pageDecoration,
@@ -71,6 +72,9 @@ class _SplashPageState extends State<SplashPage> {
           color: Colors.black,
         ),
         done: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: primaryColor,
+          ),
           onPressed: () {
             context.router.navigate(const DashboardRoute());
           },
@@ -80,11 +84,14 @@ class _SplashPageState extends State<SplashPage> {
         ),
         skipOrBackFlex: 0,
         onDone: () => gotoHome(context),
-        dotsDecorator: const  DotsDecorator(
-          size:  Size(5.0, 10.0),
+        dotsDecorator: const DotsDecorator(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(25.0)),
+          ),
+          size: Size(10.0, 5.0),
           activeColor: Colors.black,
-          color:  Color(0xFFBDBDBD),
-          activeSize:  Size(10.0, 10.0),
+          color: Color(0xFFBDBDBD),
+          activeSize: Size(20.0, 10.0),
           activeShape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(25.0)),
           ),

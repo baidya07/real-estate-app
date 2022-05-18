@@ -34,7 +34,7 @@ dependencies:
 
   introduction_screen: ^3.0.2
 
-  form_builder_validators: ^7.3.0
+  form_builder_validators: ^8.1.1
 
   flutter_localizations: # Setting up an internation­alized app: the Flutter_localizations package
     sdk: flutter
@@ -55,7 +55,7 @@ dependencies:
 
   injectable: ^1.5.3 #Injectable is a convenient code generator for get_it. Inspired by Angular DI, Guice DI and inject.dart.
 
-  auto_route: ^3.2.2 #AutoRoute is a declarative routing solution, where everything needed for navigation is automatically generated for you.
+  auto_route: ^4.0.1 #AutoRoute is a declarative routing solution, where everything needed for navigation is automatically generated for you.
 
 dev_dependencies:
   flutter_test:
@@ -66,7 +66,7 @@ dev_dependencies:
 
   # add the generator to your dev_dependencies
   injectable_generator:
-  auto_route_generator: ^3.2.1
+  auto_route_generator: ^4.0.0
   json_serializable: ^6.1.4
   json_annotation:
 
@@ -78,9 +78,9 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^1.0.0
+  flutter_lints: ^2.0.1
 
-  auto_route: ^3.2.2 #AutoRoute is a declarative routing solution, where everything needed for navigation is automatically generated for you.
+  auto_route: ^4.0.1 #AutoRoute is a declarative routing solution, where everything needed for navigation is automatically generated for you.
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
