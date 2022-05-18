@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:real_estate_app/app/pages/home_page.dart';
 import 'package:real_estate_app/app/pages/profile_page/profile_page.dart';
 
 class SplashScreen extends StatefulWidget {
