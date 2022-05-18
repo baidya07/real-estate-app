@@ -11,12 +11,11 @@ import '../app/pages/search/detail.dart';
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AutoRoute(page: SplashPage,),
+    AutoRoute(page: SplashPage, initial: true,),
     AutoRoute(page: HouseDetailPage,),
 
     AutoRoute(
       page: LandingPage,
-      initial: true,
       path: '/landing',
       // name: 'landingRouter',
       children: [

@@ -2,6 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:real_estate_app/app/resources/colors.dart';
 
+import '../../resources/size_constants.dart';
+
 
 const horizontalEdgePadding = 15.0;
 const  verticalEdgePadding = 20.0;
@@ -48,15 +50,20 @@ class ProfilePage extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             const CircleAvatar(
+                              backgroundColor: primaryColor,
                               child: Icon(Icons.person),
-                              maxRadius: 10,
-                              minRadius: 10,
+                              maxRadius: 25,
+                              minRadius: 25,
                             ),
                             const SizedBox(width: 10),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Kritika Subba'),
+                                Text(
+                                  'Kritika Subba',
+                                  style: Theme.of(context).textTheme.bodyText1,
+                                ),
+                                SBC.sH,
                                 Text('98XXXXXXXX'),
                               ],
                             ),

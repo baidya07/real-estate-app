@@ -59,9 +59,7 @@ class AppRouter extends _i8.RootStackRouter {
 
   @override
   List<_i8.RouteConfig> get routes => [
-        _i8.RouteConfig('/#redirect',
-            path: '/', redirectTo: '/landing', fullMatch: true),
-        _i8.RouteConfig(SplashRoute.name, path: '/splash-page'),
+        _i8.RouteConfig(SplashRoute.name, path: '/'),
         _i8.RouteConfig(HouseDetailRoute.name, path: '/house-detail-page'),
         _i8.RouteConfig(LandingRoute.name, path: '/landing', children: [
           _i8.RouteConfig(HomeRouter.name, path: '', parent: LandingRoute.name),
@@ -78,7 +76,7 @@ class AppRouter extends _i8.RootStackRouter {
 /// generated route for
 /// [_i1.SplashPage]
 class SplashRoute extends _i8.PageRouteInfo<void> {
-  const SplashRoute() : super(SplashRoute.name, path: '/splash-page');
+  const SplashRoute() : super(SplashRoute.name, path: '/');
 
   static const String name = 'SplashRoute';
 }
