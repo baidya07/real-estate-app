@@ -43,8 +43,7 @@ dependencies:
 
   flutter_form_builder: ^7.0.0
 
-  #  Approximate how your Flutter app looks and performs on another device.
-  device_preview: ^1.0.0
+
 
   #Easily configure any flutter application with global variables using a `.env` file.
   flutter_dotenv: ^5.0.2
@@ -54,6 +53,7 @@ dependencies:
   injectable: ^1.5.3 #Injectable is a convenient code generator for get_it. Inspired by Angular DI, Guice DI and inject.dart.
 
   auto_route: ^3.2.2 #AutoRoute is a declarative routing solution, where everything needed for navigation is automatically generated for you.
+  dots_indicator: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +61,8 @@ dev_dependencies:
 
   # add build runner if not already added
   build_runner:
+    #  Approximate how your Flutter app looks and performs on another device.
+  device_preview: ^1.0.0
 
   # add the generator to your dev_dependencies
   injectable_generator:
@@ -78,7 +80,6 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
 
-  auto_route: ^3.2.2 #AutoRoute is a declarative routing solution, where everything needed for navigation is automatically generated for you.
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

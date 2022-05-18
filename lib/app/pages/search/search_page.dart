@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate_app/app/pages/search/detail.dart';
+import 'package:real_estate_app/app/pages/search/widgets/customAppbar.dart';
 import 'package:real_estate_app/app/resources/colors.dart';
 import 'package:real_estate_app/app/resources/size_constants.dart';
 
@@ -27,7 +28,6 @@ class _SearchPageState extends State<SearchPage> {
             children: [
               Container(
                 height: 60,
-                width: 350,
                 decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 247, 245, 245),
                   borderRadius: BorderRadius.circular(20),
@@ -52,30 +52,6 @@ class _SearchPageState extends State<SearchPage> {
         ),
       ),
       bottomNavigationBar: const _BottomNavigationBar(),
-    );
-  }
-}
-
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String title;
-
-  const CustomAppBar({Key? key, required this.title}) : super(key: key);
-  @override
-  Size get preferredSize => const Size.fromHeight(60);
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      title: Text(
-        title,
-        style: Theme.of(context).textTheme.headline6,
-      ),
-      leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
-              color: Colors.black)),
-      backgroundColor: Colors.white,
-      elevation: 0,
     );
   }
 }
