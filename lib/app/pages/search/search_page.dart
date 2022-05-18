@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:real_estate_app/app/pages/search/detail.dart';
 
@@ -58,7 +59,33 @@ class _SearchPageState extends State<SearchPage> {
           ),
         ),
       ),
-      bottomNavigationBar: const _BottomNavigationBar(),
+      // bottomNavigationBar: const _BottomNavigationBar(),
+    );
+  }
+}
+
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final String title;
+
+  const CustomAppBar({Key? key, required this.title}) : super(key: key);
+  @override
+  Size get preferredSize => const Size.fromHeight(60);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Text(
+        title,
+        style: Theme.of(context).textTheme.headline6,
+      ),
+      leading: IconButton(
+          onPressed: () {
+            context.router.pop();
+          },
+          icon: const Icon(Icons.arrow_back_ios_new_rounded,
+              color: Colors.black)),
+      backgroundColor: Colors.white,
+      elevation: 0,
     );
   }
 }
