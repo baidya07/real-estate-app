@@ -16,7 +16,9 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: IconButton(
-          onPressed: () { context.router.pop();},
+          onPressed: (){
+            context.router.pop();
+            },
           icon: const Icon(Icons.arrow_back_ios_new_outlined,
               size: 14, color: Colors.black),
         ),

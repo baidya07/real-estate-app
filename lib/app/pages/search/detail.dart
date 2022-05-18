@@ -6,16 +6,20 @@ import 'package:real_estate_app/app/widgets/buttons.dart';
 
 import '../../resources/size_constants.dart';
 
-class HouseDetail extends StatelessWidget {
-  const HouseDetail({Key? key}) : super(key: key);
+class HouseDetailPage extends StatelessWidget {
+  const HouseDetailPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           "Detail",
-          style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context)
+                .textTheme
+                .bodyText1!
+                .copyWith(color: Colors.black),
         ),
         leading: IconButton(
             onPressed: () {

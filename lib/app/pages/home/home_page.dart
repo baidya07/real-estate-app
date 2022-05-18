@@ -111,33 +111,38 @@ class _LowerBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 150,
-      child: Stack(
-        children: [
-          const _ChipImage(),
-          Align(
-            alignment: Alignment.bottomLeft,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Text(
-                      'Pool House',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText1!
-                          .copyWith(color: primaryColor),
-                    )),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [Icon(Icons.location_on), Text('Malibu')],
-                )
-              ],
+    return InkWell(
+      onTap: (){
+        context.router.navigate(const HouseDetailRoute());
+      },
+      child: SizedBox(
+        height: 150,
+        child: Stack(
+          children: [
+            const _ChipImage(),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Text(
+                        'Pool House',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText1!
+                            .copyWith(color: primaryColor),
+                      )),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: const [Icon(Icons.location_on), Text('Malibu')],
+                  )
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -179,57 +184,62 @@ class _PopularChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.0),
-        border: Border.all(
-          color: Colors.grey.withOpacity(0.9),
-          width: 0.5,
-        ),
-      ),
-      child: Column(
-        // mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _ChipImage(),
-          SBC.lH,
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Twin Villa',
-                  style: Theme.of(context).textTheme.bodyText1,
-                ),
-                SBC.mH,
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Icon(
-                      Icons.location_on,
-                    ),
-                    Text(
-                      'Twin Villa',
-                      style: Theme.of(context).textTheme.bodyText2,
-                    ),
-                  ],
-                ),
-                SBC.mH,
-                Text(
-                  '\$120k',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2!
-                      .copyWith(color: primaryColor),
-                ),
-                SBC.lH,
-              ],
-            ),
+    return InkWell(
+      onTap: (){
+        context.router.navigate(const HouseDetailRoute());
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15.0),
+          border: Border.all(
+            color: Colors.grey.withOpacity(0.9),
+            width: 0.5,
           ),
-        ],
+        ),
+        child: Column(
+          // mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _ChipImage(),
+            SBC.lH,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Twin Villa',
+                    style: Theme.of(context).textTheme.bodyText1,
+                  ),
+                  SBC.mH,
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const Icon(
+                        Icons.location_on,
+                      ),
+                      Text(
+                        'Twin Villa',
+                        style: Theme.of(context).textTheme.bodyText2,
+                      ),
+                    ],
+                  ),
+                  SBC.mH,
+                  Text(
+                    '\$120k',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText2!
+                        .copyWith(color: primaryColor),
+                  ),
+                  SBC.lH,
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

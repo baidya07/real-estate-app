@@ -6,13 +6,13 @@ import 'package:real_estate_app/app/pages/splash_screen/splash_screen.dart';
 import '../app/pages/favourite/favorite_page.dart';
 import '../app/pages/landing/landing_page.dart';
 import '../app/pages/profile_page/profile_page.dart';
+import '../app/pages/search/detail.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AutoRoute(
-      page: SplashPage,
-    ),
+    AutoRoute(page: SplashPage,),
+    AutoRoute(page: HouseDetailPage,),
 
     AutoRoute(
       page: LandingPage,
@@ -34,18 +34,7 @@ import '../app/pages/profile_page/profile_page.dart';
         // ),
       ],
     ),
-    // AutoRoute(
-    //   children: [
-    //     AutoRoute(path: 'home', page: HomePage),
-    //     AutoRoute(path: 'search', page: SearchPage),
-    //     AutoRoute(path: 'favorite', page: FavoritePage),
-    //     AutoRoute(path: 'profile', page: ProfilePage),
-    //     // AutoRoute(
-    //     //   path: 'profile',
-    //     //   page: ProfilePage,
-    //     // ),
-    //   ],
-    // ),
+
   ],
 )
 class $AppRouter {}
