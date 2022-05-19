@@ -12,11 +12,11 @@ class FavoritePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('My Wishlist',
+        title: Text('Favorite',
             style: Theme.of(context)
                 .textTheme
-                .headline3
-                ?.copyWith(color: Colors.black)),
+                .bodyText1!
+                .copyWith(color: Colors.black)),
       ),
       backgroundColor: const Color(0xffE5E5E5),
       body: SingleChildScrollView(
