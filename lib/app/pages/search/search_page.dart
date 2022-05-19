@@ -4,6 +4,8 @@ import 'package:real_estate_app/app/pages/search/detail.dart';
 
 import 'package:real_estate_app/app/resources/colors.dart';
 import 'package:real_estate_app/app/resources/size_constants.dart';
+import 'package:real_estate_app/app/widgets/cached_network_image_builder.dart';
+import 'package:real_estate_app/app/widgets/circular_avatar.dart';
 import 'package:real_estate_app/routes/router.gr.dart';
 
 class SearchPage extends StatefulWidget {
@@ -20,13 +22,11 @@ class _SearchPageState extends State<SearchPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          "Search",
+        title: Text("Search",
             style: Theme.of(context)
                 .textTheme
                 .bodyText1!
-                .copyWith(color: Colors.black)
-        ),
+                .copyWith(color: Colors.black)),
         leading: IconButton(
             onPressed: () {
               context.router.pop();
@@ -202,7 +202,7 @@ class _CardCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         context.router.push(const HouseDetailRoute());
       },
       child: Column(
@@ -273,10 +273,7 @@ class _CategorySale extends StatelessWidget {
               Container(
                 height: 135,
                 width: 145,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        fit: BoxFit.cover, image: NetworkImage(imageUrl)),
-                    borderRadius: const BorderRadius.all(Radius.circular(10))),
+                child: CircularAvatar(imageUrl: imageUrl, borderRadius: 7.5),
               ),
               SBC.xLH,
               Container(
@@ -372,14 +369,10 @@ class _CategoryChip extends StatelessWidget {
                 child: AspectRatio(
                   aspectRatio: 0.9,
                   child: Container(
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(houseImage),
-                        ),
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(10))),
-                  ),
+                      child: CircularAvatar(
+                    imageUrl: houseImage,
+                    borderRadius: 10,
+                  )),
                 ),
               ),
             ],

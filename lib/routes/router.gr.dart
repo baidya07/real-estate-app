@@ -33,7 +33,7 @@ class AppRouter extends _i8.RootStackRouter {
     },
     HouseDetailRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i2.HouseDetailPage());
+          routeData: routeData, child: _i2.HouseDetailPage());
     },
     LandingRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(

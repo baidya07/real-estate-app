@@ -62,6 +62,7 @@ dependencies:
 
   auto_route: ^3.2.2 #AutoRoute is a declarative routing solution, where everything needed for navigation is automatically generated for you.
   dots_indicator: ^2.1.0
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:
@@ -106,6 +107,7 @@ flutter:
     - assets/images/
     - assets/images/dummy_images/
     - assets/icons/
+    - assets/gif/
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

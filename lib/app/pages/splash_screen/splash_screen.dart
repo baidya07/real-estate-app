@@ -25,10 +25,6 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('welcome'),
-      //   centerTitle: true,
-      // ),
       body: IntroductionScreen(
         key: splashKey,
         pages: [
