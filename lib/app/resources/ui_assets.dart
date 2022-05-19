@@ -31,6 +31,7 @@ class UIAssets {
   static String getImage(String imageName) {
     return 'assets/images/$imageName';
   }
+
   static String getDummyImage(String imageName) {
     return 'assets/images/dummy_images/$imageName';
   }

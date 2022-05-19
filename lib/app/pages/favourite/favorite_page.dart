@@ -25,8 +25,6 @@ class FavoritePage extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.white,
         title: Text('Favorite',
             style: Theme.of(context)
                 .textTheme

@@ -5,7 +5,7 @@ import 'package:real_estate_app/routes/router.gr.dart';
 
 import '../../resources/size_constants.dart';
 import '../../widgets/cached_network_image_builder.dart';
-import '../favorite_page/favorite_page.dart';
+import '../favourite/favorite_page.dart';
 
 class CategoryPage extends StatelessWidget {
   final String? title;
@@ -43,6 +43,7 @@ class CategoryPage extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return ResidenceItem(
                 backgroundImage: backgroundImage!,
+
                 // imageUrl: image, title: title, description: description, //'body_type_car_${index % 2}.png'
               );
             },
@@ -216,8 +217,13 @@ class CategoryAppbar extends StatelessWidget implements PreferredSizeWidget {
             .copyWith(fontWeight: FontWeight.w600),
       ),
       actions: [
-        //todo: add search icon here
-
+        IconButton(
+          onPressed: () {
+            context.router.navigate(const SearchRouter());
+          },
+          icon: const Icon(Icons.search),
+          color: Colors.black,
+        ),
       ],
     );
   }
