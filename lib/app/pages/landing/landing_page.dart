@@ -24,7 +24,7 @@ class LandingPage extends StatelessWidget {
           type: BottomNavigationBarType.fixed,
           selectedFontSize: 12,
           unselectedFontSize: 12,
-          unselectedItemColor: Colors.grey,
+          unselectedItemColor: Colors.black,
           selectedItemColor: Colors.white,
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,

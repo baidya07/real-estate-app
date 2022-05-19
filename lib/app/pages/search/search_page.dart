@@ -32,7 +32,8 @@ class _SearchPageState extends State<SearchPage> {
               context.router.pop();
             },
             icon: const Icon(Icons.arrow_back_ios_new_rounded,
-                color: Colors.black)),
+                color: Colors.black,
+            size: 14,)),
         backgroundColor: Colors.white,
         elevation: 0,
       ),

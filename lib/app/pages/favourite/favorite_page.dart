@@ -1,8 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:real_estate_app/app/resources/size_constants.dart';
 
-final horizontalEdgePadding = 10.0;
-final verticalEdgePadding = 15.0;
+const horizontalEdgePadding = 10.0;
+const verticalEdgePadding = 15.0;
 
 class FavoritePage extends StatelessWidget {
   const FavoritePage({Key? key}) : super(key: key);
@@ -11,6 +12,18 @@ class FavoritePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        leading: InkWell(
+          onTap: (){
+            context.router.pop();
+          },
+          child: const Icon(
+            Icons.arrow_back_ios,
+            size: 14,
+            color: Colors.black,
+          ),
+        ),
         centerTitle: true,
         title: Text('Favorite',
             style: Theme.of(context)
@@ -48,7 +61,7 @@ class _ProductWishlist extends StatelessWidget {
     return Container(
       color: Colors.white,
       child: Padding(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
             horizontal: horizontalEdgePadding, vertical: verticalEdgePadding),
         // ignore: avoid_unnecessary_containers
         child: Row(
@@ -98,6 +111,7 @@ class _ProductWishlist extends StatelessWidget {
                                 Icons.favorite_outline,
                                 size: 20,
                               )),
+                          SBC.xXlW,
                           InkWell(
                             onTap: () {},
                             child: const Icon(
