@@ -58,6 +58,9 @@ dependencies:
 
   get_it: ^7.2.0
 
+  #  A Flutter staggered grid view (masonry tiles) which supports multiple columns with rows of varying sizes
+  flutter_staggered_grid_view: ^0.6.0
+
   injectable: ^1.5.3 #Injectable is a convenient code generator for get_it. Inspired by Angular DI, Guice DI and inject.dart.
 
   auto_route: ^3.2.2 #AutoRoute is a declarative routing solution, where everything needed for navigation is automatically generated for you.

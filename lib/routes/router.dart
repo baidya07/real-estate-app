@@ -3,6 +3,7 @@ import 'package:real_estate_app/app/pages/home/home_page.dart';
 import 'package:real_estate_app/app/pages/search/search_page.dart';
 import 'package:real_estate_app/app/pages/splash_screen/splash_screen.dart';
 
+import '../app/pages/category/category_page.dart';
 import '../app/pages/favourite/favorite_page.dart';
 import '../app/pages/landing/landing_page.dart';
 import '../app/pages/profile_page/profile_page.dart';
@@ -13,6 +14,7 @@ import '../app/pages/search/detail.dart';
   routes: <AutoRoute>[
     AutoRoute(page: SplashPage, initial: true,),
     AutoRoute(page: HouseDetailPage,),
+    AutoRoute(path: 'category', page: CategoryPage),
 
     AutoRoute(
       page: LandingPage,

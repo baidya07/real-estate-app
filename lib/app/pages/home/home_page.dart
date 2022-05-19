@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:real_estate_app/app/widgets/cached_network_image_builder.dart';
 import 'package:real_estate_app/app/widgets/circular_avatar.dart';
 import '../../../routes/router.gr.dart';
 import '../../resources/colors.dart';
@@ -22,7 +21,7 @@ class HomePage extends StatelessWidget {
                 .bodyText1!
                 .copyWith(color: Colors.black)),
         centerTitle: true,
-        elevation: 0,
+        elevation: 0.2,
         backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {},
@@ -321,15 +320,15 @@ class _CategoryCard extends StatelessWidget {
               UIAssets.getDummyImage(categoryImageLink),
             ),
             onPressed: () {
-              // if (index == 0) {
-              //   // context.router.push(CategoryRoute(categoryType: 'Car', title: 'Maruti Suzuki', description: 'Alto LX', backgroundImage: 'https://cdn-1.motorsport.com/images/amp/6n9yKwOY/s1000/ferrari-296-gt3-sketch-1.jpg'));
-              // } else if (index == 1) {
-              //   // context.router.push(CategoryRoute(categoryType: 'Bike', title: 'Harley Davidson', description: 'iron 883', backgroundImage:'https://www.harley-davidson.com/content/dam/h-d/images/product-images/bikes/motorcycle/2022/2022-iron-883/2022-iron-883-016/2022-iron-883-016-motorcycle.jpg',));
-              // } else if (index == 2) {
-              //   // context.router.push(CategoryRoute(categoryType: 'Scooter', title: 'TVS Ntorq', description: 'Marvel Edition', backgroundImage:'https://i.pinimg.com/564x/2d/30/50/2d3050b4afa0da6d778d554665692deb.jpg',));
-              // } else {
-              //   // context.router.push(CategoryRoute(categoryType: 'Electric', title: 'MG', description: 'Morris Garage', backgroundImage: 'https://mgmotors.com.np/admin/uploads/products/lyigh%20(1).jpg'));
-              // }
+              if (index == 0) {
+                context.router.push(CategoryRoute(categoryType: 'All Categories', title: 'Mansion', description: 'Bunglow', backgroundImage: 'https://i.pinimg.com/originals/7f/59/9f/7f599f37422ba74e57c5045721a47aa6.jpg'));
+              } else if (index == 1) {
+                context.router.push(CategoryRoute(categoryType: 'Villa', title: 'Mansion', description: 'Bunglow', backgroundImage: 'https://www.gannett-cdn.com/presto/2019/12/09/PDEM/5d630673-80e4-40ec-a6b4-d41112b9f0a3-1.jpg?crop=1702,957,x171,y85&width=1702&height=957&format=pjpg&auto=webp'));
+              } else if (index == 2) {
+                context.router.push(CategoryRoute(categoryType: 'Shop', title: 'Addidas', description: 'Footwear', backgroundImage: 'https://thumbs.dreamstime.com/b/front-entrance-to-adidas-store-singapore-shopping-mall-mar-176840861.jpg'));
+              } else {
+                context.router.push(CategoryRoute(categoryType: 'Building', title: 'World Atlas', description: 'Most famous building', backgroundImage: 'https://www.worldatlas.com/r/w1200/upload/65/fa/8c/shutterstock-789412159.jpg'));
+              }
             }),
         SBC.mH,
         Text(
