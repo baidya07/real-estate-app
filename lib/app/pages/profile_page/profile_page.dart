@@ -26,107 +26,109 @@ class ProfilePage extends StatelessWidget {
               size: 14, color: Colors.black),
         ),
         centerTitle: true,
-        title: const Text(
+        title:  Text(
           'My Profile',
-          style: TextStyle(color: Colors.black),
+          style: Theme.of(context).textTheme.bodyText1?.copyWith(color: Colors.black),
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: horizontalEdgePadding,
-                    vertical: verticalEdgePadding),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const CircleAvatar(
-                              backgroundColor: primaryColor,
-                              child: Icon(Icons.person),
-                              maxRadius: 25,
-                              minRadius: 25,
-                            ),
-                            const SizedBox(width: 10),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Kritika Subba',
-                                  style: Theme.of(context).textTheme.bodyText1,
-                                ),
-                                SBC.sH,
-                                Text('98XXXXXXXX'),
-                              ],
-                            ),
-                          ],
-                        ),
-                        const Spacer(),
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  primary: primaryColor),
-                              onPressed: () {},
-                              child: const Text(
-                                'Edit',
-                                style: TextStyle(color: Colors.black),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Container(
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: horizontalEdgePadding,
+                      vertical: verticalEdgePadding),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const CircleAvatar(
+                                backgroundColor: primaryColor,
+                                child: Icon(Icons.person),
+                                maxRadius: 25,
+                                minRadius: 25,
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
+                              const SizedBox(width: 10),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Kritika Subba',
+                                    style: Theme.of(context).textTheme.bodyText1,
+                                  ),
+                                  SBC.sH,
+                                  Text('98XXXXXXXX'),
+                                ],
+                              ),
+                            ],
+                          ),
+                          const Spacer(),
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    primary: primaryColor),
+                                onPressed: () {},
+                                child: const Text(
+                                  'Edit',
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 2.5,
-            ),
-            const ProfileCart(
-              iconPic: Icon(Icons.notifications_outlined),
-              title: 'Notifications',
-            ),
-            const SizedBox(
-              height: 2.5,
-            ),
-            const ProfileCart(
-              iconPic: Icon(Icons.person),
-              title: 'About Us',
-            ),
-            const SizedBox(
-              height: 2.5,
-            ),
-            const ProfileCart(
-              iconPic: Icon(Icons.help_center_outlined),
-              title: 'Help & Support',
-            ),
-            const SizedBox(
-              height: 2.5,
-            ),
-            const ProfileCart(
-              iconPic: Icon(Icons.settings_outlined),
-              title: 'Setting',
-            ),
-            const SizedBox(
-              height: 2.5,
-            ),
-            const ProfileCart(
-              iconPic: Icon(Icons.logout_outlined),
-              title: 'Log out',
-            ),
-          ],
+              const SizedBox(
+                height: 2.5,
+              ),
+              const ProfileCart(
+                iconPic: Icon(Icons.notifications_outlined),
+                title: 'Notifications',
+              ),
+              const SizedBox(
+                height: 2.5,
+              ),
+              const ProfileCart(
+                iconPic: Icon(Icons.person),
+                title: 'About Us',
+              ),
+              const SizedBox(
+                height: 2.5,
+              ),
+              const ProfileCart(
+                iconPic: Icon(Icons.help_center_outlined),
+                title: 'Help & Support',
+              ),
+              const SizedBox(
+                height: 2.5,
+              ),
+              const ProfileCart(
+                iconPic: Icon(Icons.settings_outlined),
+                title: 'Setting',
+              ),
+              const SizedBox(
+                height: 2.5,
+              ),
+              const ProfileCart(
+                iconPic: Icon(Icons.logout_outlined),
+                title: 'Log out',
+              ),
+            ],
+          ),
         ),
       ),
     );
