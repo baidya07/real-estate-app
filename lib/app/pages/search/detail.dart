@@ -105,23 +105,24 @@ class _BottomNav extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            height: 50,
-            width: 60,
             decoration: BoxDecoration(
                 border:
                     Border.all(color: const Color.fromARGB(255, 166, 165, 165)),
-                borderRadius: BorderRadius.circular(15)),
+                borderRadius: BorderRadius.circular(4)),
             child: IconButton(
+              padding: EdgeInsets.zero,
+              visualDensity: VisualDensity(
+                  horizontal: VisualDensity.minimumDensity,
+                  vertical: VisualDensity.minimumDensity),
               onPressed: () {},
               icon: const Icon(
                 Icons.favorite,
                 // color: Colors.pink,
-                size: 35.0,
+                size: 30.0,
               ),
             ),
           ),
           SizedBox(
-            height: 50,
             width: 200,
             child: PrimaryButton(onPressed: () {}, title: "BUY NOW"),
           ),
@@ -140,8 +141,13 @@ class _ImageSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.network(
-            "https://www.homestratosphere.com/wp-content/uploads/2018/02/single-family-detached-home.jpg"),
+        AspectRatio(
+          aspectRatio: 1.67,
+          child: Image.network(
+            "https://www.homestratosphere.com/wp-content/uploads/2018/02/single-family-detached-home.jpg",
+            height: 200,
+          ),
+        ),
         SBC.mH,
         Center(
           child: DotsIndicator(
