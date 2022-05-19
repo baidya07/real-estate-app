@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:real_estate_app/app/widgets/cached_network_image_builder.dart';
+import 'package:real_estate_app/app/widgets/circular_avatar.dart';
 import '../../../routes/router.gr.dart';
 import '../../resources/colors.dart';
 import '../../resources/size_constants.dart';
@@ -86,7 +88,7 @@ class HomePage extends StatelessWidget {
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  children: List.generate(3, (index) {
+                  children: List.generate(5, (index) {
                     return Row(
                       children: [
                         const _LowerBanner(),
@@ -116,10 +118,11 @@ class _LowerBanner extends StatelessWidget {
         context.router.navigate(const HouseDetailRoute());
       },
       child: SizedBox(
-        height: 150,
+        height: 160,
         child: Stack(
           children: [
-            const _ChipImage(),
+            const CircularAvatar(imageUrl: 'https://e8rbh6por3n.exactdn.com/sites/uploads/2020/05/villa-la-gi-thumbnail.jpg?strip=all&lossy=1&ssl=1', borderRadius: 15.0),
+            // const _ChipImage(),
             Align(
               alignment: Alignment.bottomLeft,
               child: Column(
@@ -136,7 +139,12 @@ class _LowerBanner extends StatelessWidget {
                       )),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: const [Icon(Icons.location_on), Text('Malibu')],
+                    children: [
+                      const Icon(Icons.location_on),
+                      Text('Malibu',
+                      style: Theme.of(context).textTheme.bodyText2!.copyWith(color: Colors.white),
+                      )
+                    ],
                   )
                 ],
               ),
@@ -190,17 +198,17 @@ class _PopularChip extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15.0),
+          borderRadius: BorderRadius.circular(18.0),
           border: Border.all(
             color: Colors.grey.withOpacity(0.9),
-            width: 0.5,
+            width: 0.1,
           ),
         ),
         child: Column(
           // mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _ChipImage(),
+            const _ChipImage(),
             SBC.lH,
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -253,21 +261,13 @@ class _ChipImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      width: 350,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(18.0),
-        image: const DecorationImage(
-          fit: BoxFit.cover,
-          image: NetworkImage(
-            'https://666159.smushcdn.com/1406590/wp-content/uploads/2019/08/1Villa-Solstice-Estepona-.jpg?size=1440x720&lossy=1&strip=1&webp=1',
+      height: 165,
+      width: 330,
+          child: const CircularAvatar(
+            borderRadius: 18.0,
+            imageUrl: 'https://666159.smushcdn.com/1406590/wp-content/uploads/2019/08/1Villa-Solstice-Estepona-.jpg?size=1440x720&lossy=1&strip=1&webp=1',
           ),
-        ),
-        border: Border.all(
-          color: Colors.grey.withOpacity(0.9),
-          width: 0.5,
-        ),
-      ),
+
     );
   }
 }
@@ -279,20 +279,18 @@ class _MainCategoryView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: SC.lW, vertical: SC.xLH),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: List.generate(4, (index) {
-            const titles = <String>['All', 'Villa', 'Shop', 'Building'];
-            return _CategoryCard(
-              index: index,
-              categoryImageLink: 'category_img_$index.svg',
-              categoryTitle: titles[index],
-            );
-          }),
-        ),
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: SC.lW, vertical: SC.xLH),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: List.generate(4, (index) {
+          const titles = <String>['All', 'Villa', 'Shop', 'Building'];
+          return _CategoryCard(
+            index: index,
+            categoryImageLink: 'category_img_$index.svg',
+            categoryTitle: titles[index],
+          );
+        }),
       ),
     );
   }
@@ -314,7 +312,7 @@ class _CategoryCard extends StatelessWidget {
     return Column(
       children: [
         RoundedIcon(
-            iconSize: 40,
+            iconSize: 30,
             contentPadding: 20,
             hasShadow: true,
             borderRadius: 5,

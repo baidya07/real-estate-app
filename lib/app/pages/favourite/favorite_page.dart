@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate_app/app/resources/size_constants.dart';
 
-final horizontalEdgePadding = 10.0;
-final verticalEdgePadding = 15.0;
+const horizontalEdgePadding = 10.0;
+const verticalEdgePadding = 15.0;
 
 class FavoritePage extends StatelessWidget {
   const FavoritePage({Key? key}) : super(key: key);
@@ -12,6 +12,8 @@ class FavoritePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.white,
         title: Text('Favorite',
             style: Theme.of(context)
                 .textTheme
