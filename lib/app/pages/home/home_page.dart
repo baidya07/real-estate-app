@@ -198,6 +198,7 @@ class _PopularChip extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
+            color: const Color.fromARGB(255, 247, 245, 245),
           borderRadius: BorderRadius.circular(18.0),
           border: Border.all(
             color: Colors.grey.withOpacity(0.9),
