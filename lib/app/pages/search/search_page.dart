@@ -4,6 +4,7 @@ import 'package:real_estate_app/app/pages/search/detail.dart';
 
 import 'package:real_estate_app/app/resources/colors.dart';
 import 'package:real_estate_app/app/resources/size_constants.dart';
+import 'package:real_estate_app/routes/router.gr.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -18,12 +19,18 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           "Search",
-          style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context)
+                .textTheme
+                .bodyText1!
+                .copyWith(color: Colors.black)
         ),
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.router.pop();
+            },
             icon: const Icon(Icons.arrow_back_ios_new_rounded,
                 color: Colors.black)),
         backgroundColor: Colors.white,
@@ -74,6 +81,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      centerTitle: true,
       title: Text(
         title,
         style: Theme.of(context).textTheme.headline6,
@@ -193,37 +201,42 @@ class _CardCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const _CategoryChip(
-                title: "Resort",
-                houseImage:
-                    "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2021/08/download-23.jpg"),
-            SBC.xXlW,
-            const _CategoryChip(
-                title: "Cottage",
-                houseImage:
-                    "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/smith-november-2020-1623338178.jpg?crop=1xw:1xh;center,top&resize=480:*"),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const _CategoryChip(
-                title: "Office",
-                houseImage:
-                    "https://www.lakecountyil.gov/ImageRepository/Document?documentID=1259"),
-            SBC.xXlW,
-            const _CategoryChip(
-                title: "Urban",
-                houseImage:
-                    "https://www.architecturalrecord.com/ext/resources/Issues/2021/02-February/Golden-Valley-Midcentury-Modern-House-01-B.jpg?1611944303")
-          ],
-        ),
-      ],
+    return InkWell(
+      onTap: (){
+        context.router.push(const HouseDetailRoute());
+      },
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const _CategoryChip(
+                  title: "Resort",
+                  houseImage:
+                      "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2021/08/download-23.jpg"),
+              SBC.xXlW,
+              const _CategoryChip(
+                  title: "Cottage",
+                  houseImage:
+                      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/smith-november-2020-1623338178.jpg?crop=1xw:1xh;center,top&resize=480:*"),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const _CategoryChip(
+                  title: "Office",
+                  houseImage:
+                      "https://www.lakecountyil.gov/ImageRepository/Document?documentID=1259"),
+              SBC.xXlW,
+              const _CategoryChip(
+                  title: "Urban",
+                  houseImage:
+                      "https://www.architecturalrecord.com/ext/resources/Issues/2021/02-February/Golden-Valley-Midcentury-Modern-House-01-B.jpg?1611944303")
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
@@ -245,8 +258,7 @@ class _CategorySale extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => const HouseDetail()));
+        context.router.push(const HouseDetailRoute());
       },
       child: Container(
         decoration: const BoxDecoration(
