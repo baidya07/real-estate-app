@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
+import 'package:real_estate_app/app/resources/colors.dart';
 import 'package:real_estate_app/app/resources/size_constants.dart';
 
 const horizontalEdgePadding = 10.0;
@@ -15,7 +17,7 @@ class FavoritePage extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
         leading: InkWell(
-          onTap: (){
+          onTap: () {
             context.router.pop();
           },
           child: const Icon(
@@ -38,10 +40,8 @@ class FavoritePage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: List.generate(4, (index) {
                 return Column(
-                  children: [
-                    SBC.sH,
-                    const _ProductWishlist(),
-                    SBC.sH,
+                  children: const [
+                    _ProductWishlist(),
                   ],
                 );
               })),
@@ -59,7 +59,12 @@ class _ProductWishlist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      // padding: const EdgeInsets.all(2.0),
+      // margin: const  EdgeInsets.all(4.0),
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey), color: Colors.white),
+      //color: Colors.white,
+      margin: const EdgeInsets.all(4.0),
       child: Padding(
         padding: const EdgeInsets.symmetric(
             horizontal: horizontalEdgePadding, vertical: verticalEdgePadding),
@@ -71,7 +76,7 @@ class _ProductWishlist extends StatelessWidget {
               borderRadius: BorderRadius.circular(25.0),
               child: Image.asset(
                 'assets/images/dummy_images/house1_image.jpg',
-                height: 75,
+                height: 70,
               ),
             ),
             // Expanded(
@@ -105,13 +110,31 @@ class _ProductWishlist extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          InkWell(
-                              onTap: () {},
-                              child: const Icon(
-                                Icons.favorite_outline,
-                                size: 20,
-                              )),
-                          SBC.xXlW,
+                          FavoriteButton(
+                            iconSize: 25.0,
+                            iconColor: primaryColor,
+                            isFavorite: true,
+                            valueChanged: (_isFavorite) {
+                              print('Is Favorite : $_isFavorite');
+                            },
+                          ),
+                          SBC.sW,
+                          StarButton(
+                            iconSize: 30.0,
+                            iconColor: primaryColor,
+                            isStarred: false,
+                            // iconDisabledColor: Colors.white,
+                            valueChanged: (_isStarred) {
+                              print('Is Starred : $_isStarred');
+                            },
+                          ),
+                          // InkWell(
+                          //     onTap: () {},
+                          //     child: const Icon(
+                          //       Icons.favorite_outline,
+                          //       size: 20,
+                          //     )),
+                          SBC.sW,
                           InkWell(
                             onTap: () {},
                             child: const Icon(
@@ -132,3 +155,4 @@ class _ProductWishlist extends StatelessWidget {
     );
   }
 }
+

@@ -36,6 +36,8 @@ dependencies:
 
   form_builder_validators: ^7.3.0
 
+  favorite_button: ^0.0.4
+
   flutter_localizations: # Setting up an internation­alized app: the Flutter_localizations package
     sdk: flutter
 
